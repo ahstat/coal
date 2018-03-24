@@ -1,7 +1,7 @@
 # Coal: Composition of Real Linear Functions
 
 Begin with an example. Let *f: x ↦ x+1* and *g: x ↦ 2x*.
-Let a word formed with *"f"* and *"g"* letters, for example *w="gfg"*.
+Let a word formed with *f* and *g* letters, for example *w="gfg"*.
 By applying composition rules on *w*, we obtain for all *x*: 
 *w(x)=gfg(x)=gf(2x)=g(2x+1)=4x+2*.
 Slope is *4*, intercept is *2* and fixed point is *x=-2/3*.
@@ -32,6 +32,8 @@ Before wasting time with it, make sure you can understand its underlying complex
 Minimal and detailed examples are provided in `main.R`.
 
 ## Documentation of functions
+
+Each function is self-documented and contains unit tests.
 
 ### 1_linear_function.R
 Code to define the `Linear function` class. A linear function contains the formal slope and intercept (as strings), and the related numeric slopes of intercepts (as a vector gmp numbers, since we can consider a whole range of slopes and intercepts together). We can do composition of linear functions with the `%o%` operator.
