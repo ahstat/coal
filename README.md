@@ -125,11 +125,11 @@ Plot the trees of words. Only for toy purposes.
 - `plot_tree` (function): lot the tree of a dataframe obtained with get_parents
 
 ### 9_continuous.R
-Convert discrete words to continuous words. For example, how to go continuously from "fg" to "gfg"? A method is proposed for 2-letters compositions by representing each word as a probability distribution. The code is self-documented before "iota_vector". After that, please contact me if you need to understand it in details. Main functions are "alpha", "beta", "x0" and "move".
+Allow evaluation of continuous words. For example, how to go continuously from *fg* to *gfg*? A method is proposed for 2-letters compositions by representing each word as a probability distribution. The code is self-documented before `iota_vector`. After that, please contact me if you need to understand it in details. Main functions are `alpha`, `beta`, `x0` and `move`.
 
-Example 1: We define a continuous road from *fg* to *gfg*: *g<sup>0</sup>fg*, *g<sup>0.1</sup>fg*, *g<sup>0.2</sup>fg* ..., *g<sup>0.9</sup>fg*, *gfg*. Each element *g<sup>x</sup>fg* is a linear function where slope is given by "alpha"; intercept by "beta"; fixed point by "x0". 
+Example 1: We define a continuous road from *fg* to *gfg*: *g<sup>0</sup>fg*, *g<sup>0.1</sup>fg*, *g<sup>0.2</sup>fg* ..., *g<sup>0.9</sup>fg*, *gfg*. Each element *g<sup>x</sup>fg* is a linear function where slope is given by `alpha`; intercept by `beta`; fixed point by `x0`. 
 
-Example 2: Given *gfg*, we can make a continuous road from *gfg* to *gfg* using "move" function: *gfg*, *g<sup>0.9</sup>fg<sup>1.1</sup>*, *g<sup>0.8</sup>fg<sup>1.2</sup>*, ..., *g<sup>0.1</sup>fg<sup>1.9</sup>*, *fgg*, *f<sup>0.9</sup>ggf<sup>0.1</sup>*, *f<sup>0.8</sup>ggf<sup>0.2</sup>*, ..., *f<sup>0.1</sup>ggf<sup>0.9</sup>*, *ggf*, *g<sup>0.9</sup>gfg<sup>0.1</sup>*, *g<sup>0.8</sup>gfg<sup>0.2</sup>*, ..., *g<sup>0.1</sup>gfg<sup>0.9</sup>*, *gfg*.
+Example 2: Given *gfg*, we can make a continuous road from *gfg* to *gfg* using `move` function: *gfg*, *g<sup>0.9</sup>fg<sup>1.1</sup>*, *g<sup>0.8</sup>fg<sup>1.2</sup>*, ..., *g<sup>0.1</sup>fg<sup>1.9</sup>*, *fgg*, *f<sup>0.9</sup>ggf<sup>0.1</sup>*, *f<sup>0.8</sup>ggf<sup>0.2</sup>*, ..., *f<sup>0.1</sup>ggf<sup>0.9</sup>*, *ggf*, *g<sup>0.9</sup>gfg<sup>0.1</sup>*, *g<sup>0.8</sup>gfg<sup>0.2</sup>*, ..., *g<sup>0.1</sup>gfg<sup>0.9</sup>*, *gfg*.
 
 - `get_nb_without` (function)
 - `get_pos_letter` (function)
