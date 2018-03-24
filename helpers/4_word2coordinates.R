@@ -242,7 +242,7 @@ coord_representation = function(word, voc = c("f", "g")) {
     colnames_new = expand.grid(colnames(walk_word_current),
                                paste0("step_", 1:nrow(walk_word_current)))
     colnames_new = apply(colnames_new, 1, paste, collapse = "-")
-  
+    
     names(out) = colnames_new
   }
   
@@ -304,7 +304,7 @@ coord_representation_n("f", 3) # (1, 0, 0, 0, 0, 0)
 ##
 # Unit tests
 ##
-checkEqualsNumeric(coord_representation_n("ffg", 5), 
+checkEqualsNumeric(coord_representation_n("ffg", 5),
                    c(0,1, 1,0, 1,0, 0,0, 0,0))
 checkEqualsNumeric(coord_representation_n("g", 3),
                    c(0,1, 0,0, 0,0))
@@ -324,18 +324,18 @@ setGeneric("compute_coord", function(object) {
   standardGeneric("compute_coord")
 })
 
-setMethod("compute_coord", "Word tree", 
+setMethod("compute_coord", "Word tree",
           function(object) {
-  current_words = object@df$word
-  max_nchar = max(nchar(current_words))
-  voc = object@voc
-  out = sapply(current_words, coord_representation_n, max_nchar, voc)
-  out = t(out)
-  out = data.table(word = rownames(out), out)
-  
-  object@coord = out
-  return(object)
-})
+            current_words = object@df$word
+            max_nchar = max(nchar(current_words))
+            voc = object@voc
+            out = sapply(current_words, coord_representation_n, max_nchar, voc)
+            out = t(out)
+            out = data.table(word = rownames(out), out)
+            
+            object@coord = out
+            return(object)
+          })
 
 ##
 # Examples

@@ -91,27 +91,3 @@ wt = add_common_index(pushn(new("Word tree",
                                 linfunc = list(f_base, g_base, g_base)), 2))
 checkEqualsNumeric(wt@df$common_index, c(2, 5:7, 14:22))
 rm(wt)
-
-########################
-# word2index_signature #
-########################
-# Now, there is no indexing linked to the signature.
-# This is because there is more than one possible ordering.
-# First, we can order with the level and the signature:
-# f < g < ff < fg < gg < fff < etc.
-# Then, we need to order the elements with the same signature.
-# Each word is a trajectory, so it is like to compare two trajectories.
-# But the operation 'trajectory V < trajectory W' does not define a total order
-# For example, fggf and gffg cannot be compared.
-# (the partial order is interesting, showing line, squares and cubes...)
-
-#######################################
-# Partial order on the words function #
-#######################################
-# Given the words with a given signature, we describe the partial ordering of
-# those words.
-
-###################################
-# Partial order plotting function #
-###################################
-# Plotting as a graph the partial ordering (more or less a Hasse diagram)
