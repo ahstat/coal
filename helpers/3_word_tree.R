@@ -1,16 +1,3 @@
-# Summary:
-# - Word tree (class)
-# - df_to_integer_df (function)
-# - initialize (method)
-# - add_letters (function)
-# - add_linfunc (function)
-# - add_values (function)
-# - push (method)
-# - pushn (method)
-# - signature_func (function)
-# - add_signature (method)
-# - add_coeffs (method)
-
 ##############################
 # Word tree class definition #
 ##############################

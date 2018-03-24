@@ -1,9 +1,3 @@
-# Summary:
-# - remove_first_charact (function)
-# - remove_last_charact (function)
-# - get_parents (function)
-# - plot_tree (function)
-
 ###############################
 # Remove first/last character #
 ###############################

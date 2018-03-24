@@ -1,13 +1,3 @@
-# Summary:
-# - outer (function)
-# - rep_mat (function)
-# - compute_matrix_values (function)
-# - push_matrix_values (function)
-# - matrix_values_numeric (function)
-# - get_pos (function)
-# - to_integer_mat (function)
-# - is_NA_mat (function)
-
 ##################
 # Redefine outer #
 ##################

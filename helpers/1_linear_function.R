@@ -1,23 +1,3 @@
-# Summary:
-# - Linear function (class)
-# - initialize (method)
-# - f_base (value)
-# - g_base (value)
-# - id_n (function)
-# - is_defined_as_id (function)
-# - get_inverse (function)
-# - F_base (value)
-# - G_base (value)
-# - printf (method)
-# - split_coeff (function)
-# - poly_expansion (function)
-# - compo_formal (function)
-# - compo_numeric (function)
-# - compo (method)
-# - `%o%` (function)
-# - word2num (function)
-# - linfun_init (function)
-
 ####################################
 # Linear function class definition #
 ####################################

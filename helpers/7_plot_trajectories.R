@@ -1,9 +1,3 @@
-# Summary:
-# - trajectory_word (function)
-# - trajectory_word_ready_to_plot (function)
-# - plot_path_word (function)
-# - plot_path_multiple_words (function)
-
 ###############################
 # Trajectory of a word on R^b #
 ###############################

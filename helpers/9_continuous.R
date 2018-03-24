@@ -1,27 +1,3 @@
-# Summary:
-# - get_nb_without (function)
-# - get_pos_letter (function)
-# - prob_of (function)
-# - supp_of (function)
-# - get_eps (function)
-# - prob_supp_of (function)
-# - diff_gmp (function)
-# - prob_supp_inv_of (function)
-# - plot_distribution (function)
-# - iota_vector (function)
-# - puiss (function)
-# - bigterms1 (function)
-# - bigterms2 (function)
-# - sigma (function)
-# - bigterms_singular_left (function)
-# - bigterms_singular_right (function)
-# - sigma_singular (function)
-# - alpha (function)
-# - beta (function)
-# - x0 (function)
-# - reordering (function)
-# - move (function)
-
 ############################################################
 # Number of letters of the word, without counting "letter" #
 ############################################################

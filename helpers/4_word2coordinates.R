@@ -1,13 +1,3 @@
-# Summary:
-# - voc_unique_func (function)
-# - voc_lower_func (function)
-# - voc_upper_func (function)
-# - voc2steps (function)
-# - walk_word (function)
-# - coord_representation (function)
-# - coord_representation_n (function)
-# - compute_coord (method)
-
 # We assume that the vocabulary is as follows:
 # - Each element of `voc` is a one letter character,
 # - Lower case is to go forward, and related upper case is the inverse.

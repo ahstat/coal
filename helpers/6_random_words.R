@@ -1,7 +1,3 @@
-# Summary:
-# - random_word (function)
-# - random_words (function)
-
 ########################
 # Create a random word #
 ########################

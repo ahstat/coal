@@ -1,7 +1,3 @@
-# Summary:
-# - word2index (function)
-# - add_common_index (method)
-
 #######################
 # word2index function #
 #######################
