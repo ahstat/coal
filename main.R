@@ -126,3 +126,12 @@ source("examples/example_1_concatenation.R")
 source("examples/example_2_distance_between_words.R")
 source("examples/example_3_b_for_each_signature.R")
 source("examples/example_4_integer_bottom_to_up.R")
+
+##################################
+# Examples with continuous words #
+##################################
+source("examples/example_5_fixed_points_of_continuous_words.R")
+
+
+
+
