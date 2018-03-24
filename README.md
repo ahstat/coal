@@ -125,7 +125,7 @@ Plot the trees of words. Only for toy purposes.
 ### 9_continuous.R
 Convert discrete words to continuous words. For example, how to go continuously from "fg" to "gfg"? A method is proposed for 2-letters compositions by representing each word as a probability distribution. The code is self-documented before "iota_vector". After that, please contact me if you need to understand it in details. Main functions are "alpha", "beta", "x0" and "move".
 
-Example 1: We define a continuous road from "fg" to "gfg": "g<sup>0<\sup>fg", "g^{0.1}fg", "g^{0.2}fg" ..., "g^{0.9}fg", "gfg". Each element "g^{x}fg" is a linear function where slope is given by "alpha"; intercept by "beta"; fixed point by "x0". 
+Example 1: We define a continuous road from "fg" to "gfg": "g<sup>0</sup>fg", "g<sup>0.1</sup>fg", "g<sup>0.2</sup>fg" ..., "g<sup>0.9</sup>fg", "gfg". Each element "g<sup>x</sup>fg" is a linear function where slope is given by "alpha"; intercept by "beta"; fixed point by "x0". 
 
 Example 2: Given "gfg", we can make a continuous road from "gfg" to "gfg" using "move" function: "gfg", "g^{0.9}fg^{1.1}", "g^{0.8}fg^{1.2}", ..., "g^{0.1}fg^{1.9}", "fgg", "f^{0.9}ggf^{0.1}", "f^{0.8}ggf^{0.2}", ..., "f^{0.1}ggf^{0.9}", "ggf", "g^{0.9}gfg^{0.1}", "g^{0.8}gfg^{0.2}", ..., "g^{0.1}gfg^{0.9}", "gfg".
 
