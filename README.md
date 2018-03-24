@@ -54,7 +54,7 @@ Code to define the `Linear function` class. A linear function contains the forma
 - `compo_numeric` (function)
 - `compo` (method)
 - `%o%` (function): composition of two linear functions
-- `word2num` (function): convert word to **R**^{#word}, e.g. "fffgg" to c(2, 2, 1, 1, 1)
+- `word2num` (function): convert word to **R**^{#word}, e.g. *fffgg* to *(2, 2, 1, 1, 1)*
 - `linfun_init` (function): given *f* and *g* linear functions, get the linear function related to a specific word (not useful because we can use word tree class directly with some initialization)
 
 ### 2_evaluate_x.R
