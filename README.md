@@ -121,7 +121,7 @@ Plot the trees of words. Only for toy purposes.
 
 - `remove_first_charact` (function)
 - `remove_last_charact` (function)
-- `get_parents` (function): get parents of a word or of multiple words. The feature get_parents(w, 0) allows to do not iterate, e.g. "ffg" giving "fg".
+- `get_parents` (function): get parents of a word or of multiple words.
 - `plot_tree` (function): lot the tree of a dataframe obtained with get_parents
 
 ### 9_continuous.R
