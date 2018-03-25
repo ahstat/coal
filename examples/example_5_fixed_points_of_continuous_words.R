@@ -71,3 +71,119 @@ for(min in seq_min) {
   }
 }
 dev.off()
+
+##########################################################
+# Fixed point for random words with complex coefficients #
+##########################################################
+set.seed(1234)
+words = random_words(100, 14)
+for(i in 1:30) {
+  print(i)
+  w = words[i]
+  
+  prob_supp = prob_supp_of("f", w, gmp = FALSE)
+  m = get_nb_without("g", w)
+  n = get_nb_without("f", w)
+  
+  name = paste0(i, "_", w, ".png")
+  
+  ## Setting 1:
+  # a = exp(2iπt) for t in [0, 1]
+  # b = -1/3
+  # c = 2
+  # d = 0
+  b = -1/3; c = 2; d = 0
+  t = seq(from = 0, to = 1, by = 0.0003)
+  y = sapply(t, function(t) {x0(prob_supp, m, n, exp(2*1i*pi*t), b, c, d)})
+  png(paste0("outputs/x0_complex/setting1_", name), 800, 800)
+  plot(y, type = "l", asp = 1, main = w)
+  # text(Re(y), Im(y), t, cex = 0.7, pos = 3)
+  dev.off()
+  
+  ## Setting 2:
+  # a = 1i
+  # b = -1/3
+  # c = exp(iπt)/t for t in [-20, 20]
+  # d = 0
+  a = 1i; b = -1/3; d = 0
+  t = seq(from = -20, to = 20, by = 0.0003)
+  y = sapply(t, function(t) {x0(prob_supp, m, n, a, b, exp(pi*1i*t)/t, d)})
+  png(paste0("outputs/x0_complex/setting2_", name), 800, 800)
+  plot(y, type = "l", asp = 1, main = w)
+  dev.off()
+  
+  ## Setting 3:
+  # a = 1i
+  # b = -1/3
+  # c = exp(2iπt)/t for t in [-20, 20]
+  # d = 0
+  a = 1i; b = -1/3; d = 0
+  t = seq(from = -20, to = 20, by = 0.0003)
+  y = sapply(t, function(t) {x0(prob_supp, m, n, a, b, exp(2*pi*1i*t)/t, d)})
+  png(paste0("outputs/x0_complex/setting3_", name), 800, 800)
+  plot(y, type = "l", asp = 1, main = w)
+  dev.off()
+}
+
+###################################################
+# Fixed points during a complete period of a word #
+###################################################
+## Compute the fixed points for a complete period of a word
+one_move_period = function(eps, prob_supp, m, n, a, b, c, d) {
+  t = seq(from = 0, to = 2, by = eps) # one period is 2
+  y = sapply(t, function(t) {x0(move(prob_supp, 2-t), m, n, a, b, c, d)})
+  return(data.frame(t=t, y=y))
+}
+
+a = 2; b = 0; c = 2; d = 1
+m = 1; n = 1
+
+## Fixed point for words from fg to gf to fg
+w = "fg"
+prob_supp = prob_supp_of("f", w, gmp = FALSE)
+plot(one_move_period(0.01, prob_supp, m, n, a, b, c, d), type = "l",
+     ylab = "Fixed point",
+     main = "Fixed point for words from fg to gf to fg")
+
+## Difference of fixed point for words from fg to gf to fg, with a varying
+for(a in seq(from = 0.0101, to = 10, by = 0.025)) {
+  one_period = one_move_period(0.01, prob_supp, m, n, a, b, c, d)
+  one_period_next = one_move_period(0.01, prob_supp, m, n, a+0.01, b, c, d)
+  delta = one_period_next$y - one_period$y
+  png(paste0("outputs/diff_moving/", a, ".png"), 800, 800)
+  plot(one_period$t, delta, type = "l", xlab = "t",
+       main = paste0("Difference of fixed point values when a=", a))
+  dev.off()
+}
+
+####################################
+# Moving for a continuous function #
+####################################
+# Instead on considering "prob_supp_of" a word w, we can define it directly
+# from a CDF. The following CDF keeps continuity when moving to the right 
+# modulo 1.
+
+## CDF of interest involving sinus functions
+x = seq(from = 0, to = 2*pi, length.out = 1000)
+nb_move = 5 # recommanded = 5
+plot(0, 0, xlim = c(0,1), ylim = c(0, 1), type = "n",
+     xlab = "t", ylab = "f(t)", 
+     main = "Moving for a sinus continuous function")
+for(t in seq(from = 0, to = 2*pi, length.out = nb_move)[-1]) {
+  lines(x/(2*pi), (sin(x+t)+x-sin(t))/(2*pi), type = "l")
+}
+
+## Related density
+x = seq(from = 0, to = 2*pi, length.out = 100)
+my_prob_supp = list(supp = (x/(2*pi)), prob = cos(x)+1)
+my_prob_supp$prob = my_prob_supp$prob / sum(my_prob_supp$prob)
+
+## Fixed point when moving the probability distribution during one period
+a = 2; b = 0; c = 2; d = 1
+m = 1; n = 1
+png("outputs/fixed_moving_custom_prob.png", 800, 800)
+plot(one_move_period(0.01, my_prob_supp, m, n, a, b, c, d), type = "l",
+     ylab = "Fixed point",
+     main = "Fixed point for a custom probability")
+dev.off()
+# We observe a smooth function (when length(x) --> +Inf)
