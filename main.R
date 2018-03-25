@@ -1,4 +1,4 @@
-# Coal: Composition of Real Linear Functions
+# Coal: Composition of Linear Functions
 rm(list=ls())
 setwd("~/Documents/GitHub/coal/")
 library(igraph)

@@ -1,4 +1,4 @@
-# Coal: Composition of Real Linear Functions
+# Coal: Composition of Linear Functions
 
 Begin with an example. Let *f: x ↦ x+1* and *g: x ↦ 2x*.
 Let a word formed with *f* and *g* letters, for example *w="gfg"*.
