@@ -31,6 +31,18 @@ Before wasting time with it, make sure you can understand its underlying complex
 ## Code examples
 Minimal and detailed examples are provided in `main.R`.
 
+*Example of data frame containing compositions*
+![Example of data frame containing compositions](outputs/df_example.png) 
+
+*Fixed point of a random word with varying complex coefficients*
+![Fixed point of a random word with varying complex coefficients](outputs/x0_complex/setting2_27_gggfgggfgfffgf.png)
+
+*Fixed point for word fg with different random coefficients*
+![Fixed point for word fg with different random coefficients](outputs/unif-10_10_small.png)
+
+*Fractional part of some fixed points*
+![Fractional part of some fixed points](outputs/fg_frac_fixed.png)
+
 ## Documentation of functions
 
 Each function is self-documented and contains unit tests.
